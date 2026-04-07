@@ -358,6 +358,7 @@
   }
 
   .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+  .hp-field { position: absolute; left: -9999px; }
 
   .form-group label {
     font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em;
@@ -639,29 +640,57 @@
 </section>
 
 <!-- CONTACT -->
-<form class="contact-form reveal" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <input type="hidden" name="form-name" value="contact" />
-  <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
-  <div class="form-row">
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" name="name" placeholder="Your name" required>
+<section class="contact" id="contact">
+  <div class="reveal">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's work together</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-intro reveal">
+      <p>
+        I'm open to interesting conversations — collaborations, speaking, 
+        or just swapping ideas about what the internet could become.
+      </p>
+      <ul class="contact-links">
+        <li>
+          <a href="https://www.linkedin.com/in/kat-y-73599622/" target="_blank">
+            <span>LinkedIn</span>
+            <span class="link-label">Connect</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/katalunia030" target="_blank">
+            <span>@katalunia030</span>
+            <span class="link-label">Twitter / X</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" name="email" placeholder="your@email.com" required>
-    </div>
+    <form class="contact-form reveal" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>What's this about?</label>
+        <input type="text" name="subject" placeholder="e.g. Product consulting, speaking engagement, collaboration">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" placeholder="Tell me more..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send message</button>
+    </form>
   </div>
-  <div class="form-group">
-    <label>What's this about?</label>
-    <input type="text" name="subject" placeholder="e.g. Product consulting, speaking engagement, collaboration">
-  </div>
-  <div class="form-group">
-    <label>Message</label>
-    <textarea name="message" placeholder="Tell me more..."></textarea>
-  </div>
-  <button type="submit" class="btn-primary">Send message</button>
-</form>
+</section>
 
 <!-- FOOTER -->
 <footer>
